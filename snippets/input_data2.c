@@ -1,17 +1,13 @@
 #include <stdio.h>
 
 int main(void){
-  int i, s, n, d;
-  
-  scanf("%d", &n);
+  int s, d;
 
   s = 0;
 
-  for(i=0;i!=n;i++){
-    scanf("%d", &d);
+  for(; scanf("%d", &d)==1;){
     s += d;
   }
-
   printf("%d\n", s);
 
   return 0;
