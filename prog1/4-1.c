@@ -12,6 +12,9 @@ int main(int argc, char *argv[]){
     exit(-1);
   }
 
+  // fgetc, fputcは一文字単位での読み書き
+  // fgetc:一文字読む, ファイル終端はEOFを返す
+  // fputc:第一引数を第二引数に書き出す
   int ch;
   while( (ch=fgetc(f)) != EOF){
     fputc(ch, stdout);
