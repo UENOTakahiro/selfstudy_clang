@@ -28,7 +28,7 @@ int main(){
   //列の集計
   for(int i=0;i<r;i++){
     for(int j=0;j<c+1;j++){
-      vec[c][j] += vec[i][j];
+      vec[r][j] += vec[i][j];
     }
   }
 
