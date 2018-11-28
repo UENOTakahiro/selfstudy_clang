@@ -9,14 +9,14 @@ int main(){
     W[i] = toupper(W[i]);
   }
   string T = "";
+  string T2 = "";
 
   int counter = 0;
-  while (T != "END_OF_TEXT") {
+  while (T2 != "END_OF_TEXT") {
     cin >> T;
+    T2 = T;
     for(int i=0;i<T.size();i++){
-      if(T != "end_of_text"){
         T[i] = toupper(T[i]);
-      }
     }
 
     if(T == W){
