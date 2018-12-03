@@ -1,5 +1,4 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include <stdio.h>
 
 int gcd(int x, int y){
   if(x < y){
@@ -15,9 +14,11 @@ int gcd(int x, int y){
   return x;
 }
 
-int main(){
+int main(int argc, char *argv[]){
   int x, y;
-  cin >> x >> y;
+  scanf("%d %d", &x, &y);
 
-  cout << gcd(x, y) << endl;
+  printf("%d\n", gcd(x,y));
+
+  return 0;
 }
