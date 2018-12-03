@@ -1,27 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int eratos(int x){
-  int isprime[x+1];
-  for(int i=0;i<=x;i++){
-    isprime[i] = 1;
+bool isprime(int x){
+  if(x == 2){
+    return true;
   }
-  isprime[0] = 0;
-  isprime[1] = 0;
-  for(int i=2;i<=sqrt(x);i++){
-    if(isprime[i]){
-      int j = i + i;
-      while(j<=x){
-        isprime[j] = 0;
-        j += i;
-      }
+  if(x < 2 || x%2==0){
+    return false;
+  }
+  for(int i=3;i<=sqrt(x);i+=2){
+    if(x%i==0){
+      return false;
     }
   }
-  if(isprime[x] == 1){
-    return 1;
-  } else {
-    return 0;
-  }
+  return true;
 }
 
 int main(){
@@ -38,8 +30,9 @@ int main(){
 
   int counter = 0;
   for(int i=0;i<n;i++){
-    counter += eratos(pnum[i]);
+    if(isprime(pnum[i])==true){
+      counter++;
+    }
   }
-
   cout << counter << endl;
 }
