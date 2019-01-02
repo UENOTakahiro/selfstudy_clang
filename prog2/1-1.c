@@ -1,24 +1,19 @@
 #include <stdio.h>
 
-int gcd(int x, int y){
-  if(x < y){
-    int k = y;
-    y = x;
-    x = k;
-  }
-  while(y > 0){
-    int r = x % y;
-    x = y;
-    y = r;
-  }
-  return x;
-}
-
 int main(int argc, char *argv[]){
-  int x, y;
-  scanf("%d %d", &x, &y);
+  #define LINESIZE 100
+  char line[LINESIZE];
+  int h, m; char b, io;
+  int tm;
 
-  printf("%d\n", gcd(x,y));
+  for(tm=0;fgets(line, LINESIZE, stdin)!=NULL;){
+    sscanf(line, "%c %c %2d:%2d\n", &b, &io, &h, &m);
+    switch(io){
+      case 'I': tm += 60*h+m; break;
+      case 'O': tm -= 60*h+m; break;
+    }
+  }
+  printf("%d:%02d\n", tm/60, tm%60);
 
   return 0;
 }
