@@ -1,12 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "ITEM.h"
-#include "AM.h"
 
 int count = 0;
 
 void generate(int n, int d[]);
    // d[0:n) に非負整数値を入れてくる
+
 
 int main(int argc, char *argv[]){
 
@@ -15,19 +14,14 @@ int main(int argc, char *argv[]){
   d = calloc(n, sizeof(int));
   generate(n, d);
 
-  // int i;
-  // for(i=0;i<n;i++){
-  //   printf("%d\n", d[i]);
-  // }
+  char num[10000001] = {0};
 
-  AMinit(n);
-  int k;
-  for(k=0;k<n;k++){
-    if(AMsearch(d[k])==NULL){
-      AMinsert(d[k]);
-    } else {
+  int i;
+  for(i=0;i<n;i++){
+    if(num[d[i]]=='1'){
       count++;
     }
+    num[d[i]]='1';
   }
 
   printf("%d\n", count);
