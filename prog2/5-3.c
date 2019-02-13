@@ -23,9 +23,10 @@ int main(int argc, char *argv[]){
 
   int *num;
   num = calloc(10, sizeof(int));
-  int k;
-  for(k=0;k<=argc-2;k++){
-    num[k] = atoi(argv[k+2]);
+
+  int i;
+  for(i=0;i<=argc-2;i++){
+    num[i] = atoi(argv[i+2]);
   }
 
   int *d;
@@ -36,14 +37,12 @@ int main(int argc, char *argv[]){
   qsort((void *)d, (size_t)n, sizeof(int), compare);
 
   int num_pair[argc-2];
-  int l;
   for(l=0;l<num_pair.length;l++){
     num_pair[l] = pair(num[l], d, )
   }
 
-  int i;
   for(i=0; i<=argc-2;i++){
-    printf("%d: %d", num[i], c);
+    printf("%d: %d\n", num[i], c);
   }
 
   return 0;
